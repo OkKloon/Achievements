@@ -1,0 +1,4 @@
+name: Achievemnts
+version: '${project.version}'
+main: me.powerbutton.achievemnts.Achievemnts
+api-version: 1.19
