@@ -61,6 +61,11 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+
     </repositories>
 
     <dependencies>
@@ -75,7 +80,7 @@
             <artifactId>NoteBlockAPI</artifactId>
             <version>1.6.1</version>
             <scope>system</scope>
-            <systemPath>${basedir}\src\main\resources\NoteBlockAPI-1.6.1-SNAPSHOT (2).jar</systemPath>
+            <systemPath>/Users/arturs/Desktop/PlayerDistributor/Achievements/src/main/resources/NoteBlockAPI-1.6.1-SNAPSHOT.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

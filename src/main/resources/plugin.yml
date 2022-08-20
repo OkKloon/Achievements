@@ -2,3 +2,10 @@ name: Achievemnts
 version: '${project.version}'
 main: me.powerbutton.achievemnts.Achievemnts
 api-version: 1.19
+depend:
+  - NoteBlockAPI
+commands:
+  songs:
+    description: aeglkageagaepg
+  forceplay:
+    description: force

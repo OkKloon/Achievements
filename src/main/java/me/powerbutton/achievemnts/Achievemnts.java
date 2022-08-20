@@ -1,8 +1,13 @@
 package me.powerbutton.achievemnts;
 
+import me.powerbutton.achievemnts.commands.ForcePlay;
+import me.powerbutton.achievemnts.commands.StopSongs;
 import me.powerbutton.achievemnts.listeners.BlockBreaksListener;
+import me.powerbutton.achievemnts.listeners.CancelFireworkDamage;
+import me.powerbutton.achievemnts.listeners.CatFeedListener;
 import me.powerbutton.achievemnts.listeners.EntityListener;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,17 +25,24 @@ public static Achievemnts getInstance() {
 instance=this;
 saveDefaultConfig();
         Bukkit.getPluginManager().registerEvents(new BlockBreaksListener(), this);
+        Bukkit.getPluginManager().registerEvents(new CancelFireworkDamage(), this);
+        Bukkit.getPluginManager().registerEvents(new CatFeedListener(), this);
+
         Bukkit.getPluginManager().registerEvents(new EntityListener(), this);
+        getCommand("songs").setExecutor(new StopSongs());        getCommand("forceplay").setExecutor(new ForcePlay());
 
         Bukkit.getScheduler().runTaskTimerAsynchronously(this, () -> {
 int random = ThreadLocalRandom.current().nextInt(4);
 if (random == 0) {
+    System.out.println("vajadzetu but, ka saktu spelet muziku");
     for (Player players : Bukkit.getOnlinePlayers()) {
         if (this.getConfig().getBoolean(players.getName()+ ".playsongs")) {
-            if (players.getLocation().getY() >68) {
-            Methods.playSong(players, "upper.nbs");
+            if (players.getLocation().getY() >60) {
+            Methods.playSong(players, "/upper.nbs");
+                players.sendMessage(ChatColor.GREEN + "Ja tu vairāk negribi dzirdēt šīs dziesmas raksti '/song'");
             } else if (players.getLocation().getY() < 0) {
-                Methods.playSong(players, "cave.nbs");
+                Methods.playSong(players, "/cave.nbs");
+                players.sendMessage(ChatColor.GREEN + "Ja tu vairāk negribi dzirdēt šīs dziesmas raksti '/song'");
             }
 
         }

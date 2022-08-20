@@ -15,12 +15,30 @@ public class BlockBreaksListener implements Listener {
         if (e.getBlock().getType() == Material.EMERALD_ORE || e.getBlock().getType() == Material.DEEPSLATE_EMERALD_ORE) {
             if (!Achievemnts.getInstance().getConfig().getBoolean(e.getPlayer().getName() + ".firstemerald")) {
                 Methods.setValue(e.getPlayer(), "firstemerald");
-                e.getPlayer().sendMessage(Prefix.prefix + "Villager simp");
+                Methods.sendHoverableMessage(e.getPlayer(),"Villager simp", "Izroc emerald ore");
+
                 Methods.playSound(e.getPlayer());
             }
 
 
          }
+
+
+    }
+    @EventHandler
+    public  void onBreaking(BlockBreakEvent e ) {
+        if (Achievemnts.getInstance().getConfig().getInt(e.getPlayer().getName() + ".blocksbroken") <10000) {
+            Achievemnts.getInstance().getConfig().set(e.getPlayer().getName() + ".blocksbroken",
+                    Achievemnts.getInstance().getConfig()
+                            .getInt(e.getPlayer().getName() + ".blocksbroken") + 1);
+Achievemnts.getInstance().saveConfig();
+
+        } else if (Achievemnts.getInstance().getConfig().getInt(e.getPlayer().getName() + ".blocksbroken") == 10000) {
+            Methods.setValue(e.getPlayer(), ".blocksbroken");
+            Methods.playSound(e.getPlayer());
+            Methods.sendHoverableMessage(e.getPlayer(),Prefix.prefix + "Bloku ultra racējs", "Izroc 10000 blokus" );
+
+        }
 
 
     }
