@@ -2,10 +2,7 @@ package me.powerbutton.achievemnts;
 
 import me.powerbutton.achievemnts.commands.ForcePlay;
 import me.powerbutton.achievemnts.commands.StopSongs;
-import me.powerbutton.achievemnts.listeners.BlockBreaksListener;
-import me.powerbutton.achievemnts.listeners.CancelFireworkDamage;
-import me.powerbutton.achievemnts.listeners.CatFeedListener;
-import me.powerbutton.achievemnts.listeners.EntityListener;
+import me.powerbutton.achievemnts.listeners.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -27,6 +24,7 @@ saveDefaultConfig();
         Bukkit.getPluginManager().registerEvents(new BlockBreaksListener(), this);
         Bukkit.getPluginManager().registerEvents(new CancelFireworkDamage(), this);
         Bukkit.getPluginManager().registerEvents(new CatFeedListener(), this);
+        Bukkit.getPluginManager().registerEvents(new ChatListener(), this);
 
         Bukkit.getPluginManager().registerEvents(new EntityListener(), this);
         getCommand("songs").setExecutor(new StopSongs());        getCommand("forceplay").setExecutor(new ForcePlay());
