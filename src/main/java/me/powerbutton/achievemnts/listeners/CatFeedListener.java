@@ -42,7 +42,7 @@ public class CatFeedListener implements Listener {
                     if (((Wolf) e.getRightClicked()).isTamed()) {
                         Methods.grantAchievement(e.getPlayer(), "dogfeeder");
                         Methods.sendHoverableMessage(e.getPlayer(), "Bitch Lover", "Padari suni par savu draugu :)");
-                        Methods.playSound(e.getPlayer());
+                        Methods.playSound(e.getPlayer()); //d
                     }
                 }, 2);
 

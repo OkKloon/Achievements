@@ -16,7 +16,7 @@ public class BlockBreaksListener implements Listener {
                 Methods.grantAchievement(e.getPlayer(), "firstemerald");
                 Methods.sendHoverableMessage(e.getPlayer(),"Villager simp", "Izroc emerald ore");
 
-                Methods.playSound(e.getPlayer());
+                Methods.playSound(e.getPlayer()); //d
             }
 
 

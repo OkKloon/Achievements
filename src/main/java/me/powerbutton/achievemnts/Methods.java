@@ -19,7 +19,7 @@ import java.io.File;
 public class Methods {
     public static void grantAchievement(Player player, String achievement) {
         Achievemnts.getInstance().getConfig().set(player.getName() + "." + achievement, true);
-        Achievemnts.getInstance().saveConfig();
+        Achievemnts.getInstance().saveConfig(); //d
     }
 
     public static void playSound(Player player) {

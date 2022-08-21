@@ -92,7 +92,7 @@ public class EntityListener implements Listener {
                        Methods.grantAchievement(p, "selfkiller");
                        Methods.playSound(p);
                        Methods.sendHoverableMessage(p, "Pašnāvnieks", "Nogalini pats sevi");
-                   }
+                   } // d
 
                }
 

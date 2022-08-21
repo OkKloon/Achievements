@@ -23,7 +23,7 @@ if (sender instanceof Player p) {
        Achievemnts.getInstance().getConfig().set(p.getName() + ".playsongs", false);
        Achievemnts.getInstance().saveConfig();
        p.sendMessage(ChatColor.RED + "Tagad tu NEVARI dzirdēt ambient mūziku");
-       p.stopAllSounds();
+       p.stopAllSounds(); //d
    }
 
 

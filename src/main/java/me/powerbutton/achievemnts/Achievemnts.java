@@ -44,7 +44,7 @@ if (random == 0) {
             } else if (players.getLocation().getY() < 0) {
                 Methods.playSong(players, "/cave.nbs");
                 players.sendMessage(ChatColor.GREEN + "Ja tu vairāk negribi dzirdēt šīs dziesmas raksti '/songs'");
-            }
+            }//d
 
         }
     }
