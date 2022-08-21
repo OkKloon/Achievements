@@ -2,14 +2,12 @@ package me.powerbutton.achievemnts.listeners;
 
 import me.powerbutton.achievemnts.Achievemnts;
 import me.powerbutton.achievemnts.Methods;
-import me.powerbutton.achievemnts.Prefix;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Cat;
 import org.bukkit.entity.Wolf;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -23,7 +21,7 @@ public class CatFeedListener implements Listener {
 
                 if (!Achievemnts.getInstance().getConfig().getBoolean(e.getPlayer().getName() + ".catfeed"))
                         {
-                            Methods.setValue(e.getPlayer(), "catfeed");
+                            Methods.grantAchievement(e.getPlayer(), "catfeed");
                             Methods.sendHoverableMessage(e.getPlayer(), "Pussy lover", "Pabaro kaķi ar zivi");
                             Methods.playSound(e.getPlayer());
                         }
@@ -42,7 +40,7 @@ public class CatFeedListener implements Listener {
             if (e.getPlayer().getInventory().getItemInMainHand().isSimilar(new ItemStack(Material.BONE))) {
                 Bukkit.getScheduler().runTaskLater(Achievemnts.getInstance(), () -> {
                     if (((Wolf) e.getRightClicked()).isTamed()) {
-                        Methods.setValue(e.getPlayer(), "dogfeeder");
+                        Methods.grantAchievement(e.getPlayer(), "dogfeeder");
                         Methods.sendHoverableMessage(e.getPlayer(), "Bitch Lover", "Padari suni par savu draugu :)");
                         Methods.playSound(e.getPlayer());
                     }

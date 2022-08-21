@@ -6,7 +6,6 @@ import com.xxmicloxx.NoteBlockAPI.utils.NBSDecoder;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
-import net.md_5.bungee.api.chat.hover.content.Text;
 import org.bukkit.*;
 import org.bukkit.Color;
 import org.bukkit.entity.EntityType;
@@ -15,11 +14,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.metadata.FixedMetadataValue;
 
-import java.awt.*;
 import java.io.File;
 
 public class Methods {
-    public static void setValue(Player player, String achievement) {
+    public static void grantAchievement(Player player, String achievement) {
         Achievemnts.getInstance().getConfig().set(player.getName() + "." + achievement, true);
         Achievemnts.getInstance().saveConfig();
     }

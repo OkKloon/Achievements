@@ -36,13 +36,14 @@ int random = ThreadLocalRandom.current().nextInt(4);
 if (random == 0) {
     System.out.println("vajadzetu but, ka saktu spelet muziku");
     for (Player players : Bukkit.getOnlinePlayers()) {
+        players.sendMessage(ChatColor.GRAY + "" + ChatColor.ITALIC +"Atgādinājums, dziesmas var atkal ieslēgt, izdarot '/songs'");
         if (this.getConfig().getBoolean(players.getName()+ ".playsongs")) {
             if (players.getLocation().getY() >60) {
             Methods.playSong(players, "/upper.nbs");
-                players.sendMessage(ChatColor.GREEN + "Ja tu vairāk negribi dzirdēt šīs dziesmas raksti '/song'");
+                players.sendMessage(ChatColor.GREEN + "Ja tu vairāk negribi dzirdēt šīs dziesmas raksti '/songs'");
             } else if (players.getLocation().getY() < 0) {
                 Methods.playSong(players, "/cave.nbs");
-                players.sendMessage(ChatColor.GREEN + "Ja tu vairāk negribi dzirdēt šīs dziesmas raksti '/song'");
+                players.sendMessage(ChatColor.GREEN + "Ja tu vairāk negribi dzirdēt šīs dziesmas raksti '/songs'");
             }
 
         }

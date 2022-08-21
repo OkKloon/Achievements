@@ -8,8 +8,8 @@ public class CancelFireworkDamage implements Listener
 {
     @EventHandler
     public void onDamage(EntityDamageByEntityEvent e) {
-        if (e.getEntity().hasMetadata("nodamage")) {
-            e.setCancelled(true );
+        if (e.getDamager().hasMetadata("nodamage")) {
+            e.setCancelled(true);
         }
 
     }
